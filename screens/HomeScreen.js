@@ -1,4 +1,12 @@
-import { View, Text, SafeAreaView, Image, TextInput } from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Image,
+  TextInput,
+  ScrollView
+} from 'react-native';
+
 import React, { useLayoutEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import {
@@ -6,6 +14,9 @@ import {
   UserIcon,
   SparklesIcon
 } from 'react-native-heroicons/outline';
+
+import Categories from '../components/Categories';
+import GenericRow from '../components/GenericRow';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -39,6 +50,12 @@ const HomeScreen = () => {
           <TextInput placeholder="Search for Medicine" keyboardType="default" />
         </View>
       </View>
+      <ScrollView className="bg-gray-100">
+        <Categories />
+        <GenericRow title="Featured" description="Deals of the Day" />
+        <GenericRow title="Feeling Low?" description="Mental Health" />
+        <GenericRow title="Stay Cautious!" description="Masks" />
+      </ScrollView>
     </SafeAreaView>
   );
 };
