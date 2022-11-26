@@ -1,7 +1,12 @@
-import { View, Text, SafeAreaView, Image } from 'react-native';
+import { View, Text, SafeAreaView, Image, TextInput } from 'react-native';
 import React, { useLayoutEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { ChevronDownIcon, UserIcon } from 'react-native-heroicons/outline';
+import {
+  ChevronDownIcon,
+  UserIcon,
+  SparklesIcon
+} from 'react-native-heroicons/outline';
+
 const HomeScreen = () => {
   const navigation = useNavigation();
 
@@ -27,6 +32,12 @@ const HomeScreen = () => {
         </View>
 
         <UserIcon size={30} className="border border-sky-500" />
+      </View>
+      <View className="flex-row items-cetner space-x-2 pb-2 mx-3 px-3">
+        <View className="flex-row flex-1 space-x-2 bg-gray-200 p-3">
+          <SparklesIcon size={15} />
+          <TextInput placeholder="Search for Medicine" keyboardType="default" />
+        </View>
       </View>
     </SafeAreaView>
   );
