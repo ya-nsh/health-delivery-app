@@ -1,9 +1,20 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 const ItemCard = ({ assetUrl, title, description }) => {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity className="m-4 flex items-center">
+    <TouchableOpacity
+      className="m-4 flex items-center"
+      onPress={() => {
+        navigation.navigate('Medicine', {
+          title,
+          assetUrl,
+          description
+        });
+      }}
+    >
       <Image
         source={{
           uri: assetUrl
